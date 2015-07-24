@@ -37,12 +37,15 @@
       paper-toolbar {
         /*color:red;*/
         background-color: transparent;
-        @apply(--paper-font-display3);
       }
       .mastimg {
         width: 64px; /*TODO: make this dynamic in JS*/
         height: 100%;
         border-radius: 50%;
+      }
+      .title {
+        @apply(--paper-font-display3);
+        margin-left: 65px;
       }
     </style>
   </head>
@@ -50,7 +53,7 @@
     <paper-scroll-header-panel condenses class="flex">
       <paper-toolbar class="tall">
         <iron-image preload fade class="mastimg" sizing="cover" src="img/soundreviews.png"></iron-image>
-        <div>Sound Reviews</div>
+        <div class="bottom title">Sound Reviews</div>
       </paper-toolbar>
       <sr-card></sr-card>
       <sr-card id="target" title="For the boys" author="Brooks Ryan" on-click="_onButtonClick">fortune</sr-card>
