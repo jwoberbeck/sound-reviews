@@ -36,6 +36,7 @@
       }
       paper-toolbar {
         /*color:red;*/
+        background-color: transparent;
         @apply(--paper-font-display3);
       }
       .mastimg {
@@ -46,8 +47,8 @@
     </style>
   </head>
   <body class="fullbleed layout vertical">
-    <paper-scroll-header-panel class="flex">
-      <paper-toolbar>
+    <paper-scroll-header-panel condenses class="flex">
+      <paper-toolbar class="tall">
         <iron-image preload fade class="mastimg" sizing="cover" src="img/soundreviews.png"></iron-image>
         <div>Sound Reviews</div>
       </paper-toolbar>
