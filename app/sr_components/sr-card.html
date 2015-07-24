@@ -1,0 +1,107 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/layout/layout.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation.html">
+<!-- <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html"> -->
+
+<dom-module id="sr-card">
+  <style>
+    :host {
+      display: block;
+      height: auto;
+      width: 80%;
+      @apply(--shadow-elevation-4dp);
+      @apply(--paper-font-body1);
+      background-color: pink;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    :host .card {
+      height: 100%;
+    }
+    :host .sized {
+        min-width: 300px;
+        min-height: 300px;
+    }
+    :host .titled {
+      @apply(--paper-font-headline);
+    }
+    :host .byline {
+      @apply(--paper-font-subhead);
+      color: #616161;
+    }
+    @media only screen and (max-width: 480px) {
+      :host {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      :host .sized {
+        min-width: 100px;
+        min-height: 100px;
+    } 
+    } 
+  </style>
+  <template>
+    <div on-click="_onButtonClick">
+      <div class="layout horizontal start">
+        <iron-image preload fade class="sized" sizing="contain" src="{{img}}"></iron-image>
+        <div class="layout vertical">
+          <div style="white-space: pre-wrap" class="titled">{{title}}</div>
+          <div class="byline">{{author}}</div>
+          <content> 
+          </content>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <script>
+    Polymer({
+      is: "sr-card",
+      behaviors: [
+      Polymer.NeonAnimationRunnerBehavior
+      ],
+      properties : {
+        title: {
+          type: String,
+          value: "Best Review"
+        },
+        author: {
+          type: String,
+          value: "John Oberbeck"
+        },
+        img: {
+          type: String,
+          value: "../img/polymer.svg",
+        },
+        animationConfig: {
+          value: function() {
+            return {
+              // provided by neon-animation/animations/scale-down-animation.html
+              name: 'scale-down-animation',
+              node: this
+            }
+          } 
+        }
+      },
+      listeners: {
+        // this event is fired when the animation finishes
+        'neon-animation-finish': '_onNeonAnimationFinish'
+      },
+      animate: function() {
+        // run scale-down-animation
+        this.playAnimation();
+      },
+      _onNeonAnimationFinish: function() {
+        console.log('animation done!');
+      }
+    });
+
+  </script>
+</dom-module>
