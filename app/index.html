@@ -25,12 +25,21 @@
     <link rel="import" href="bower_components/paper-styles/typography.html">
     <link rel="import" href="bower_components/paper-styles/color.html">
     <style is="custom-style">
+
+      paper-scroll-header-panel {
+        --paper-scroll-header-panel-full-header: {
+          background-color: red;
+        };
+        --paper-scroll-header-panel-condensed-header: {
+          background-color: green;
+        };
+      }
       paper-toolbar {
         /*color:red;*/
         @apply(--paper-font-display3);
       }
       .mastimg {
-        width: 56px;
+        width: 64px; /*TODO: make this dynamic in JS*/
         height: 100%;
         border-radius: 50%;
       }
@@ -42,6 +51,11 @@
         <iron-image preload fade class="mastimg" sizing="cover" src="img/soundreviews.png"></iron-image>
         <div>Sound Reviews</div>
       </paper-toolbar>
+      <sr-card></sr-card>
+      <sr-card id="target" title="For the boys" author="Brooks Ryan" on-click="_onButtonClick">fortune</sr-card>
+      <sr-card title="Supermodel: breaking the Soph Slump" img="img/supermodel.jpg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales consectetur tempor. Morbi hendrerit iaculis enim, eget accumsan ante rhoncus vel. Integer quis justo laoreet, pharetra tortor quis, ullamcorper felis. Pellentesque varius scelerisque feugiat. In vehicula magna et ante pretium, vel congue tellus finibus. Sed tincidunt volutpat massa, vitae efficitur massa eleifend et. Pellentesque sollicitudin tellus sed urna facilisis pulvinar.
+      </sr-card>
     </paper-scroll-header-panel>
     <script>
     </script>
