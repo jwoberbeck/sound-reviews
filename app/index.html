@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <link rel="shortcut icon" type="image/png" href="img/soundreviews.ico"/>
+
+    <title>Sound Reviews</title>
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/iron-image/iron-image.html">
+
+    <link rel="import" href="sr_components/sr-card.html">
+<!--     <link rel="import" href="sr_components/sr-list.html">
+    <link rel="import" href="sr_components/sr-article.html"> -->
+
+
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/paper-styles/default-theme.html">
+    <link rel="import" href="bower_components/paper-styles/shadow.html">
+    <link rel="import" href="bower_components/paper-styles/typography.html">
+    <link rel="import" href="bower_components/paper-styles/color.html">
+    <style is="custom-style">
+      paper-toolbar {
+        /*color:red;*/
+        @apply(--paper-font-display3);
+      }
+      .mastimg {
+        width: 56px;
+        height: 100%;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body class="fullbleed layout vertical">
+    <paper-scroll-header-panel class="flex">
+      <paper-toolbar>
+        <iron-image preload fade class="mastimg" sizing="cover" src="img/soundreviews.png"></iron-image>
+        <div>Sound Reviews</div>
+      </paper-toolbar>
+    </paper-scroll-header-panel>
+    <script>
+    </script>
+  </body>
+</html>
