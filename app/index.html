@@ -7,6 +7,7 @@
     <title>Sound Reviews</title>
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
@@ -39,13 +40,21 @@
         background-color: transparent;
       }
       .mastimg {
-        width: 64px; /*TODO: make this dynamic in JS*/
+        width: 64px;
         height: 100%;
         border-radius: 50%;
       }
       .title {
         @apply(--paper-font-display3);
         margin-left: 65px;
+      }
+      @media (max-width: 639px) {
+        .mastimg {
+          width: 56px;
+        }
+        .title {
+          margin-left: 57px;
+        }
       }
     </style>
   </head>
@@ -62,6 +71,7 @@
       </sr-card>
     </paper-scroll-header-panel>
     <script>
+
     </script>
   </body>
 </html>
