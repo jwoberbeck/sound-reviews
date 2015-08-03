@@ -1,0 +1,102 @@
+<!-- <link rel="import" href="../bower_components/polymer/polymer.html"> -->
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+
+<dom-module id="sr-header">
+  <style>
+    :host {
+/*      border-color: purple;
+      border-width: 3px;
+      border-style: solid;*/
+    }
+    paper-toolbar {
+/*      border-color: yellow;
+      border-width: 2px;
+      border-style: solid;*/
+      /*background-color: var(--paper-amber-200);*/
+      background-color: transparent;
+    }
+    paper-scroll-header-panel {
+/*      border-color: black;
+      border-width: 2px;
+      border-style: solid;*/
+      height: 100%;
+      /*background-color: var(--paper-lime-200);*/
+      --paper-scroll-header-panel-full-header: {
+        background-color: var(--paper-lime-200);
+      };
+
+      /* background for toolbar when it is condensed */
+      --paper-scroll-header-panel-condensed-header: {
+        background-color: var(--paper-deep-orange-500);
+      };
+    }
+
+    paper-toolbar.tall .title {
+      @apply(--paper-font-display3);
+/*      border-color: green;
+      border-width: 2px;
+      border-style: solid;*/
+      color: var(--paper-indigo-500);
+      
+    }
+    .mastimg {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+    }
+    .body {
+      background-color: var(--paper-light-blue-100);
+    }
+    #filler {
+      background-color: var(--paper-light-lime-500);
+/*      border-color: black;
+      border-width: 2px;
+      border-style: solid;*/
+    }
+    #test {
+      height: 200px;
+      width: 200px;
+      color: blue;
+/*      border-color: orange;
+      border-width: 2px;
+      border-style: solid;*/
+    }
+    .content-wrapper > ::content {
+/*      border-color: blue;
+      border-width: 2px;
+      border-style: solid;*/
+    }
+  </style>
+  <template>
+    <paper-scroll-header-panel condenses>
+      <paper-toolbar class="tall">
+        <div class="layout horizontal bottom">
+          <iron-image preload fade id="filler" class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
+          <div class="title">Sound Reviews</div>
+        </div>
+      </paper-toolbar>
+      <div class="body">
+        <!-- <div id="test">hello world</div> -->
+        <div class="content-wrapper"><content></content></div>
+      </div>
+    </paper-scroll-header-panel>
+  </template>
+  <script>
+    Polymer({
+      is: "sr-header"
+    });
+
+  </script>
+</dom-module>
