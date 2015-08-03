@@ -14,16 +14,31 @@
       display: block;
       height: auto;
       width: 80%;
+      max-width: 800px;
       @apply(--shadow-elevation-4dp);
       @apply(--paper-font-body1);
       background-color: pink;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 20px;
+      margin-top: 20px;
+    
     }
+
     :host .card {
       height: 100%;
     }
+
+    :host .titled {
+      padding-left: 10px;
+      padding-top: 5px;
+
+    }
+    
+    :host .byline {
+      padding-left: 10px;
+
+    };
+
     :host .sized {
         min-width: 300px;
         min-height: 300px;
@@ -35,24 +50,51 @@
       @apply(--paper-font-subhead);
       color: #616161;
     }
+
+    :host .contents {
+
+      padding-left: 10px;
+
+    };
+
     @media only screen and (max-width: 480px) {
+      
       :host {
-        width: 100%;
+        width: 90%;
         margin-bottom: 10px;
+        min-width: 320px;
+        
       }
+
       :host .sized {
         min-width: 100px;
         min-height: 100px;
+      } 
+
+      :host .contents {
+
+        visibility: hidden;
+        max-height: 0px;
+
+      }
+
+      :host .title {
+        font-size: 10px;
+
+      };
+    
     } 
-    } 
+
+    
   </style>
   <template>
-    <div on-click="_onButtonClick">
+    <div on-click="_onButtonaClick">
       <div class="layout horizontal start">
         <iron-image preload fade class="sized" sizing="contain" src="{{img}}"></iron-image>
         <div class="layout vertical">
           <div style="white-space: pre-wrap" class="titled">{{title}}</div>
           <div class="byline">{{author}}</div>
+          <div class="contents">{{contents}}</div>
           <content> 
           </content>
         </div>
