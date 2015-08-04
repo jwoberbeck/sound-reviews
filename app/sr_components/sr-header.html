@@ -11,6 +11,7 @@
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
 
 <dom-module id="sr-header">
@@ -72,9 +73,17 @@
           <iron-image preload fade class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
           <div class="title">Sound Reviews</div>
         </div>
+        <paper-tabs selected="0" class="bottom flex">
+          <paper-tab>HOME</paper-tab>
+          <paper-tab>LISTS</paper-tab>
+          <paper-tab>FEATURES</paper-tab>
+          <paper-tab>ABOUT</paper-tab>
+        </paper-tabs>
       </paper-toolbar>
+
       <div class="body">
         <div class="content-wrapper"><content></content></div>
+
         <paper-toolbar id="bot" class="bottom">
           <p>Sound Reviews is a 'zine blog-type thing run by John Oberbeck and Brooks Ryan.</p>
         </paper-toolbar>
