@@ -16,39 +16,26 @@
 <dom-module id="sr-header">
   <style>
     :host {
-/*      border-color: purple;
-      border-width: 3px;
-      border-style: solid;*/
     }
     paper-toolbar {
-/*      border-color: yellow;
-      border-width: 2px;
-      border-style: solid;*/
-      /*background-color: var(--paper-amber-200);*/
       background-color: transparent;
     }
     paper-scroll-header-panel {
-/*      border-color: black;
-      border-width: 2px;
-      border-style: solid;*/
       height: 100%;
       /*background-color: var(--paper-lime-200);*/
       --paper-scroll-header-panel-full-header: {
-        background-color: var(--paper-lime-200);
+        background-color: var(--paper-indigo-200);
       };
 
       /* background for toolbar when it is condensed */
       --paper-scroll-header-panel-condensed-header: {
-        background-color: var(--paper-deep-orange-500);
+        background-color: var(--paper-indigo-500);
       };
     }
 
     paper-toolbar.tall .title {
       @apply(--paper-font-display3);
-/*      border-color: green;
-      border-width: 2px;
-      border-style: solid;*/
-      color: var(--paper-indigo-500);
+      color: var(--paper-amber-500);
       
     }
     .mastimg {
@@ -59,44 +46,58 @@
     .body {
       background-color: var(--paper-light-blue-100);
     }
-    #filler {
-      background-color: var(--paper-light-lime-500);
-/*      border-color: black;
-      border-width: 2px;
-      border-style: solid;*/
+    #bot {
+      background-color: var(--paper-grey-800);
+      @apply(--paper-font-subhead);
     }
-    #test {
-      height: 200px;
-      width: 200px;
-      color: blue;
-/*      border-color: orange;
-      border-width: 2px;
-      border-style: solid;*/
+    #flair {
+      @apply(--paper-font-headline);
+      font-style: italic;
+      color: var(--paper-blue-grey-600);
     }
+    #regtitle {
+    }
+    /*Placeholder for style applied to content element*/
     .content-wrapper > ::content {
-/*      border-color: blue;
-      border-width: 2px;
-      border-style: solid;*/
+
     }
   </style>
   <template>
     <paper-scroll-header-panel condenses>
       <paper-toolbar class="tall">
-        <div class="layout horizontal bottom">
-          <iron-image preload fade id="filler" class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
+        <div id="flair" class="middle">
+          Sound Reviews about Sounds
+        </div>
+        <div id="regtitle" class="layout horizontal bottom">
+          <iron-image preload fade class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
           <div class="title">Sound Reviews</div>
         </div>
       </paper-toolbar>
       <div class="body">
-        <!-- <div id="test">hello world</div> -->
         <div class="content-wrapper"><content></content></div>
+        <paper-toolbar id="bot" class="bottom">
+          <p>Sound Reviews is a 'zine blog-type thing run by John Oberbeck and Brooks Ryan.</p>
+        </paper-toolbar>
       </div>
+      
     </paper-scroll-header-panel>
   </template>
   <script>
     Polymer({
       is: "sr-header"
     });
+    //Sets flair text to be right-justified with title
+    $(document).ready(function () {
+      var title = $("#regtitle").width();
+      var flair = $("#flair").width();
+      $("#flair").css("margin-left",title-flair);
+    });
+
+    //Placeholder function for modifying Title color with header condensing
+    addEventListener("paper-header-transform",function(e) {
+      var d = e.detail;
+    });
+    
 
   </script>
 </dom-module>
