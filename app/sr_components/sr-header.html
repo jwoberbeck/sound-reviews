@@ -11,6 +11,7 @@
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
 
@@ -56,6 +57,9 @@
       font-style: italic;
       color: var(--paper-blue-grey-600);
     }
+    #gitlink {
+      color: var(--paper-amber-800);
+    }
     #regtitle {
     }
     /*Placeholder for style applied to content element*/
@@ -73,6 +77,7 @@
           <iron-image preload fade class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
           <div class="title">Sound Reviews</div>
         </div>
+        <div class="bottom" style="width:150px"></div>
         <paper-tabs selected="0" class="bottom flex">
           <paper-tab>HOME</paper-tab>
           <paper-tab>LISTS</paper-tab>
@@ -86,6 +91,10 @@
 
         <paper-toolbar id="bot" class="bottom">
           <p>Sound Reviews is a 'zine blog-type thing run by John Oberbeck and Brooks Ryan.</p>
+          <div class="flex"></div>
+          <a href="https://github.com/jwoberbeck/sound-reviews">
+            <paper-button  id="gitlink">GITHUB</paper-button>
+          </a>
         </paper-toolbar>
       </div>
       
@@ -107,6 +116,5 @@
       var d = e.detail;
     });
     
-
   </script>
 </dom-module>
