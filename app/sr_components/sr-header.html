@@ -47,10 +47,18 @@
     }
     .body {
       background-color: var(--paper-light-blue-100);
+      min-height: 100%;
+      position:relative;
+      /*height: 100vh;*/
     }
     #bot {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
       background-color: var(--paper-grey-800);
       @apply(--paper-font-subhead);
+      color: var(--paper-grey-100);
+      bottom: 0px;
     }
     #flair {
       @apply(--paper-font-headline);
@@ -59,16 +67,20 @@
     }
     #gitlink {
       color: var(--paper-amber-800);
+      font-weight:bold;
     }
     #regtitle {
     }
+    #navbutton paper-button {
+      color: var(--paper-grey-100);
+      font-weight:bold;
+    }
     /*Placeholder for style applied to content element*/
     .content-wrapper > ::content {
-
     }
   </style>
   <template>
-    <paper-scroll-header-panel condenses>
+    <paper-scroll-header-panel class="flex" condenses>
       <paper-toolbar class="tall">
         <div id="flair" class="middle">
           Sound Reviews about Sounds
@@ -77,18 +89,28 @@
           <iron-image preload fade class="mastimg" sizing="cover" src="../img/soundreviews.png"></iron-image>
           <div class="title">Sound Reviews</div>
         </div>
-        <div class="bottom" style="width:150px"></div>
-        <paper-tabs selected="0" class="bottom flex">
+        <div class="bottom flex"></div>
+
+        <div class="bottom" id="navbutton">
+          <a href="../index.html"><paper-button>HOME</paper-button></a>
+          <paper-button>FEATURES</paper-button>
+          <paper-button>LISTS</paper-button>
+          <a href="../about.html"><paper-button>ABOUT</paper-button></a>
+        </div>
+
+        <!-- <paper-tabs selected="0" class="bottom">
           <paper-tab>HOME</paper-tab>
           <paper-tab>LISTS</paper-tab>
           <paper-tab>FEATURES</paper-tab>
-          <paper-tab>ABOUT</paper-tab>
-        </paper-tabs>
+          <a href="../about.html">
+            <paper-tab link><a href="../about.html" class="horizontal center-center layout">ABOUT</a></paper-tab>
+          </a>
+        </paper-tabs> -->
       </paper-toolbar>
 
       <div class="body">
         <div class="content-wrapper"><content></content></div>
-
+        <!-- <div class="flex"></div> -->
         <paper-toolbar id="bot" class="bottom">
           <p>Sound Reviews is a 'zine blog-type thing run by John Oberbeck and Brooks Ryan.</p>
           <div class="flex"></div>
